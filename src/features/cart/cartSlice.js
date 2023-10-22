@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
   products: [],
-  cartItems: null,
+  cartItems: [],
   amount: 0,
   total: 0,
 }
@@ -23,7 +23,7 @@ const cartSlice = createSlice({
       })
     },
     addCartItems:(state, { payload }) => {
-      if(state.cartItems===null){
+      if(state.cartItems?.length===0){
         state.cartItems = payload
       }
     },
