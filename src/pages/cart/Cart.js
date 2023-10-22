@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import CartItem from "../../components/cartItem/CartItem"
 import "./cart.css"
 import { clearCart } from "../../features/cart/cartSlice"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useMutation } from "@tanstack/react-query"
 import { checkout } from "../../api/posts"
 import Header from "../../components/header/Header"
@@ -50,7 +50,8 @@ const Cart = () => {
           </div>
         </footer>
         <div className="clear_cart_container">
-          <button className="clear_cart" onClick={() => dispatch(clearCart())}>
+          <button className="clear_cart" onClick={() => {dispatch(clearCart())
+          }}>
             <span>Clear Cart</span>
           </button>
           <button

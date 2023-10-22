@@ -1,6 +1,4 @@
-import {
-  useMutation,
-} from "@tanstack/react-query"
+import { useMutation } from "@tanstack/react-query"
 import "./App.css"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Home from "./pages/Home"
@@ -23,12 +21,15 @@ function App() {
   const { cartItems } = useSelector((store) => store.cart)
   const dispatch = useDispatch()
   const { mutate } = useMutation({
-    mutationFn: (cartItemss) => updateCartItems(cartItemss),
+    mutationFn: (cartItems) => updateCartItems(cartItems),
   })
   /* eslint-disable */
   useEffect(() => {
     dispatch(cartTotal())
-    mutate(cartItems)
+    console.log(cartItems)
+    if (cartItems !== null) {
+      mutate(cartItems)
+    }
   }, [cartItems])
   /* eslint-enable */
 

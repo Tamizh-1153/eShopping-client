@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import "./login.css"
-import { Link, useNavigate } from "react-router-dom"
 import { useMutation } from "@tanstack/react-query"
 import { userLogin } from "../../api/posts"
 import { toast } from "react-toastify"
@@ -100,6 +99,8 @@ const Login = () => {
                     className="form-control"
                     type="password"
                     value={password}
+                    minLength='6'
+                    required
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Password"
                   />

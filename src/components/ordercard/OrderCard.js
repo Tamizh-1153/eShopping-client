@@ -13,8 +13,6 @@ const OrderCard = ({ order }) => {
           <AvatarGroup className="order_img" spacing="xs">
             {order?.orderedItems.map((item) => {
               let product = products.find((i) => i.title === item.description)
-              console.log(product)
-              console.log(item)
               return (
                 <Tooltip label={item?.description} withArrow>
                   <Avatar src={product?.image} alt="img" />
