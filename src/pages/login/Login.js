@@ -4,13 +4,12 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useMutation } from '@tanstack/react-query'
 import { userLogin } from '../../api/posts'
 import { toast } from 'react-toastify'
-import useUserDetails from '../../hooks/useUserDetails'
+
 
 const Login = () => {
 
     const [email,setEmail]=useState()
     const [password, setPassword] = useState("")
-    const refresh = useNavigate()
 
     const { mutate } = useMutation({
       mutationFn: ({ email, password }) => userLogin({ email, password }),
