@@ -1,0 +1,51 @@
+.success_container {
+    height: 10rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.success_btn {
+    display: flex;
+    justify-content: center;
+    margin: 1rem auto;
+}
+
+.success_btn button {
+    color: rgba(0, 0, 0, 0.73);
+    background-color: rgb(251, 219, 19);
+    padding: .5rem 1rem;
+    border-radius: 10px;
+    font-size: var(--size-xs);
+}
+
+/* xs */
+/* @media (min-width: 475px) {}
+
+/* sm */
+@media (min-width: 640px) {
+    .success_btn button{
+        font-size: var(--size-sm);
+    }
+}
+
+/* med */
+@media (min-width: 768px) {
+    .success_btn button{
+        font-size: var(--size-base);
+    }
+}
+
+/* large */
+@media (min-width: 1024px) {
+    .success_btn button{
+        font-size: var(--size-lg);
+    }
+}
+
+/* xl */
+/* @media (min-width: 1280px) {} */
+
+/* xxl */
+/* @media (min-width: 1536px) {}  */

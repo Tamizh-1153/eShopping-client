@@ -1,0 +1,20 @@
+.cancel_container {
+     height: 10rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cancel_btn {
+     display: flex;
+    justify-content: center;
+    margin: 1rem auto;
+}
+
+.cancel_btn button {
+    color: rgba(0, 0, 0, 0.73);
+    background-color: rgb(251, 219, 19);
+    padding: 1rem 1rem;
+    border-radius: 10px;
+}
