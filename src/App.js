@@ -26,7 +26,6 @@ function App() {
   /* eslint-disable */
   useEffect(() => {
     dispatch(cartTotal())
-    console.log(cartItems)
     if (cartItems !== null) {
       mutate(cartItems)
     }
