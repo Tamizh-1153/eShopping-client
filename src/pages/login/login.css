@@ -3,3 +3,8 @@
   width: 100px;
   height: 100%;
 }
+
+.fp_link {
+  text-decoration: none;
+  /* color: inherit; */
+}

@@ -1,39 +1,36 @@
-import React, { useState } from 'react'
-import './login.css'
-import { Link, useNavigate } from 'react-router-dom'
-import { useMutation } from '@tanstack/react-query'
-import { userLogin } from '../../api/posts'
-import { toast } from 'react-toastify'
-
+import React, { useState } from "react"
+import "./login.css"
+import { Link, useNavigate } from "react-router-dom"
+import { useMutation } from "@tanstack/react-query"
+import { userLogin } from "../../api/posts"
+import { toast } from "react-toastify"
 
 const Login = () => {
+  const [email, setEmail] = useState()
+  const [password, setPassword] = useState("")
 
-    const [email,setEmail]=useState()
-    const [password, setPassword] = useState("")
-
-    const { mutate } = useMutation({
-      mutationFn: ({ email, password }) => userLogin({ email, password }),
-      onSuccess: (data)=> {
-        localStorage.setItem("token", data.token)
-        if(data.user){
-          toast.success("Login Success", {position: "top-right"})
-          window.location.replace("/")
-        }
-        else {
-          toast.error(data.message)
-        }
+  const { mutate } = useMutation({
+    mutationFn: ({ email, password }) => userLogin({ email, password }),
+    onSuccess: (data) => {
+      localStorage.setItem("token", data.token)
+      if (data.user) {
+        toast.success("Login Success", { position: "top-right" })
+        window.location.replace("/")
+      } else {
+        toast.error(data.message)
       }
-    })
+    },
+  })
 
-    const handleSubmit = async (e) => {
-      e.preventDefault()
-      mutate({ email, password })
-    }
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    mutate({ email, password })
+  }
 
   return (
     <div className="container ">
       <div className="row justify-content-center mt-5">
-        <div className="col-md-4">
+        <div className="col-lg-4">
           <div className="card my-5">
             <div className="card-body">
               <div className="d-flex justify-content-center mt-5 mb-2">
@@ -115,14 +112,19 @@ const Login = () => {
                     value="Sign in"
                   />
                 </div>
+                <div className="text-center mb-3">
+                  <a
+                    href="/register"
+                    className="fp_link btn btn-primary"
+                    
+                  >Create an account</a>
+                </div>
                 <div className="text-center">
-                  <Link to="/forgot-password">
-                    <input
-                      className="btn btn-primary my-2 "
-                      type="submit"
-                      value="Forgot Password"
-                    />
-                  </Link>
+                  <a
+                    href="/forgot_password"
+                    className="fp_link"
+                    
+                  >Forgot password?</a>
                 </div>
               </form>
             </div>

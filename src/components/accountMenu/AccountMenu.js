@@ -21,6 +21,7 @@ const AccountMenu = ({ user }) => {
   const logOut = () => {
     dispatch(removeUser())
     localStorage.removeItem("token")
+    refresh('/')
     window.location.reload()
   }
 
