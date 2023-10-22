@@ -1,6 +1,5 @@
 import {
   Avatar,
-  Button,
   Menu,
   MenuDropdown,
   MenuItem,
@@ -10,14 +9,13 @@ import {
 import React from "react"
 import "./accountMenu.css"
 import { useNavigate } from "react-router-dom"
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch} from "react-redux"
 import { removeUser } from "../../features/user/userSlice"
 
 const AccountMenu = ({ user }) => {
   const dispatch = useDispatch()
   const refresh = useNavigate()
   const avatarLetter = user?.name.split("")[0]
-  const { userr } = useSelector((store) => store.user)
   
 
   const logOut = () => {

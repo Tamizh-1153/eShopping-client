@@ -1,5 +1,4 @@
 import { useQuery } from "@tanstack/react-query"
-import { useDispatch } from "react-redux"
 import { getOrders } from "../api/posts"
 
 const useOrderedItems = () => {

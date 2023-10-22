@@ -1,6 +1,4 @@
 import {
-  QueryClient,
-  QueryClientProvider,
   useMutation,
 } from "@tanstack/react-query"
 import "./App.css"
@@ -27,11 +25,12 @@ function App() {
   const { mutate } = useMutation({
     mutationFn: (cartItemss) => updateCartItems(cartItemss),
   })
-
+  /* eslint-disable */
   useEffect(() => {
     dispatch(cartTotal())
     mutate(cartItems)
   }, [cartItems])
+  /* eslint-enable */
 
   return (
     <>

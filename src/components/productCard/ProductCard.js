@@ -7,8 +7,6 @@ import {
   increaseProduct,
   removeProduct,
 } from "../../features/cart/cartSlice"
-import { useMutation } from "@tanstack/react-query"
-import { updateCartItems } from "../../api/posts"
 import { useNavigate } from "react-router-dom"
 
 const ProductCard = ({ card }) => {
